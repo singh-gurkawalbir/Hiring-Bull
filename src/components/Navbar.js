@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useLogout from '../hooks/useLogout';
-
+import "./Navbar.css"
 export default function Navbar() {
   const { logout } = useLogout();
 
   return (
-    <nav>
+    <nav className ="navigation">
       <h1>HackIdeas</h1>
       <ul>
-        <li>
+        <li className='list-active underLine'>
           <Link to='/'>Home</Link>
         </li>
-        <li>
+        <li className='list-active underLine'>
           <Link to='/login'>Login</Link>
         </li>
-        <li>
+        <li className='list-active underLine'>
           <Link to='/signup'>Signup</Link>
         </li>
-        <li onClick={logout}>Logout</li>
+        <li className='list-active underLine' onClick={logout}>Logout</li>
       </ul>
     </nav>
   );
