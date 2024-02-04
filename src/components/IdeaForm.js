@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { db } from '../firebase/config';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; // Import serverTimestamp
-
+import Tag from './Tag';
 import './IdeaForm.css';
 import { Typography } from '@mui/material';
-
-const predefinedTags = ['tech', 'feature']; // Add more predefined tags as needed
 
 export default function IdeaForm() {
   const [newIdea, setNewIdea] = useState({
@@ -14,16 +12,20 @@ export default function IdeaForm() {
     tags: [],
     upvotes: 0,
   });
+  const [tagArray, setTagArray] = useState([]);
 
+  const receiveTag = (arrayFromChild) => {
+    setTagArray(arrayFromChild);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Add serverTimestamp to capture the current date and time
     const currentDateString = new Date().toLocaleString();
 
     await addDoc(collection(db, 'ideas'), {
       ...newIdea,
-      currentDateString, 
+      tags: tagArray,
+      currentDateString,
     });
 
     setNewIdea({
@@ -32,10 +34,7 @@ export default function IdeaForm() {
       tags: [],
       upvotes: 0,
     });
-  };
-
-  const handleTagChange = (selectedTag) => {
-    setNewIdea({ ...newIdea, tags: [...newIdea.tags, selectedTag] });
+    setTagArray([]);
   };
 
   return (
@@ -68,14 +67,8 @@ export default function IdeaForm() {
         <Typography variant='caption' display='block' gutterBottom>
           Tags:
         </Typography>
-        <input
-          className='input-field'
-          type='text'
-          onChange={(e) =>
-            setNewIdea({ ...newIdea, tags: e.target.value.split(',') })
-          }
-          value={newIdea.tags.join(',')}
-        />
+
+        <Tag onArrayChange={receiveTag}></Tag>
       </label>
       <button className='submit-button'>Add</button>
     </form>

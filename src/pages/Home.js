@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div className='App'>
       <IdeaForm />
-      <div>
+      <div className='text-center relative mb-[-60px]'>
         <button
           className='submit-button'
           style={{ margin: '0px 10px' }}
