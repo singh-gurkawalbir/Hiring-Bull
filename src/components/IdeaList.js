@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { doc, updateDoc, getDoc, setDoc,deleteDoc } from 'firebase/firestore';
+import { doc, updateDoc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import { green } from '@mui/material/colors';
 import { Typography } from '@mui/material';
@@ -55,10 +55,10 @@ export default function IdeaList({ ideas }) {
           <li key={idea.id} className='idea-item'>
             <Typography variant='h5'>{idea.title}</Typography>
             <Typography
+              className='cursor-pointer'
               variant='subtitle2'
               gutterBottom
               onClick={() => toggleExpand(index)}
-              style={{ cursor: 'pointer' }}
             >
               {expandedIndex === index
                 ? idea.description

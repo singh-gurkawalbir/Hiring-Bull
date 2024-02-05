@@ -37,15 +37,13 @@ export default function Home() {
       <IdeaForm />
       <div className='text-center relative mb-[-60px]'>
         <button
-          className='submit-button'
-          style={{ margin: '0px 10px' }}
+          className='submit-button mx-10'
           onClick={() => setIsSortedByVotes(!isSortedByVotes)}
         >
           {`${isSortedByVotes ? 'Un' : ''}Sort by Votes`}
         </button>
         <button
-          className='submit-button'
-          style={{ margin: '0px 5px' }}
+          className='submit-button mx-5'
           onClick={() => setIsSortedByCurrentDate(!isSortedByCurrentDate)}
         >
           {`${isSortedByCurrentDate ? 'Un' : ''}Sort by Current Date`}
