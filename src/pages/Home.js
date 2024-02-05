@@ -1,7 +1,6 @@
 import IdeaList from '../components/IdeaList';
 import IdeaForm from '../components/IdeaForm';
 import { useCollection } from '../hooks/useCollection';
-import { Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -13,19 +12,16 @@ export default function Home() {
   const [isSortedByCurrentDate, setIsSortedByCurrentDate] = useState(false);
 
   useEffect(() => {
-    // Update diffIdea when ideas change
     setDiffIdea(ideas);
   }, [ideas]);
 
   useEffect(() => {
-    // Update sortedByVotes when isSortedByVotes changes
     setSortedByVotes(
       isSortedByVotes ? [...ideas].sort((a, b) => b.upvotes - a.upvotes) : ideas
     );
   }, [ideas, isSortedByVotes]);
 
   useEffect(() => {
-    // Update sortedByCurrentDate when isSortedByCurrentDate changes
     setSortedByCurrentDate(
       isSortedByCurrentDate
         ? [...ideas].sort(

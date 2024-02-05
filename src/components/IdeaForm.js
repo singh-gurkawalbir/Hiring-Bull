@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { db } from '../firebase/config';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; // Import serverTimestamp
+import { collection, addDoc } from 'firebase/firestore'; 
 import Tag from './Tag';
-import './IdeaForm.css';
+import './styles/IdeaForm.css';
 import { Typography } from '@mui/material';
 
 export default function IdeaForm() {

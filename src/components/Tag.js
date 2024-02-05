@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './stylesTag.css';
-// ... (your imports)
-
+import './styles/stylesTag.css';
 const SearchAndSelect = ({ onArrayChange }) => {
   const [inputValue, setInputValue] = useState('');
   const [selectedItems, setSelectedItems] = useState([]);

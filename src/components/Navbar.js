@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useLogout from '../hooks/useLogout';
-import "./Navbar.css"
+import "./styles/Navbar.css"
 export default function Navbar() {
   const { logout } = useLogout();
 
