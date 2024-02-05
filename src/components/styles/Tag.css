@@ -25,12 +25,10 @@
   background-color: #f2f2f2;
   border-radius: 19px;
   font-size: small;
-  /* margin: 2px; */
   text-align: center;
   align-items: center;
-  scale: 0.8;
-  padding: 0px 8px;
-
+  padding: 4px 8px;
+  margin: 3px 5px;
 }
 .cross-button-tag {
   cursor: pointer;

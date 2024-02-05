@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { db } from '../firebase/config';
-import { collection, addDoc } from 'firebase/firestore'; 
+import { collection, addDoc } from 'firebase/firestore';
 import Tag from './Tag';
 import './styles/IdeaForm.css';
 import { Typography } from '@mui/material';
@@ -40,7 +40,7 @@ export default function IdeaForm() {
   return (
     <form className='idea-form' onSubmit={handleSubmit}>
       <label>
-        <Typography variant='caption' display='block' gutterBottom>
+        <Typography variant='body2' display='block' gutterBottom>
           Title:
         </Typography>
         <input
@@ -52,7 +52,7 @@ export default function IdeaForm() {
         />
       </label>
       <label>
-        <Typography variant='caption' display='block' gutterBottom>
+        <Typography variant='body2' display='block' gutterBottom>
           Description
         </Typography>
         <textarea
@@ -64,7 +64,7 @@ export default function IdeaForm() {
         />
       </label>
       <label>
-        <Typography variant='caption' display='block' gutterBottom>
+        <Typography variant='body2' display='block' gutterBottom>
           Tags:
         </Typography>
 

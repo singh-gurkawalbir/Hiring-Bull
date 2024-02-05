@@ -62,27 +62,27 @@ export default function IdeaList({ ideas }) {
             >
               {expandedIndex === index
                 ? idea.description
-                : `${idea.description.substring(0, 300)}${
-                    idea.description.length > 300 ? '...' : ''
+                : `${idea.description.substring(0, 350)}${
+                    idea.description.length > 350 ? '...' : ''
                   }`}
             </Typography>
             <div className='idea-details'>
-              <Typography variant='caption' display='block' gutterBottom>
+              <Typography variant='body2' display='block' gutterBottom>
                 Tags:
               </Typography>
 
               <Typography
-                variant='caption'
+                variant='body2'
                 display='block'
                 className='idea-upvotes'
               >
                 Upvotes: {idea.upvotes}
               </Typography>
             </div>
-            <ul className='flex'>
+            <ul className='flex mb-3'>
               {idea.tags.map((tag, tagIndex) => (
                 <p
-                  className='border-dotted rounded-md px-2 bg-slate-400 text-gray-700 text-[0.6rem]'
+                  className='border-dotted rounded-xl items-center px-2 bg-slate-400 text-gray-700 text-[0.8rem]'
                   key={tagIndex}
                 >
                   {tag}
@@ -94,7 +94,7 @@ export default function IdeaList({ ideas }) {
             </Typography>
             <ThumbUpIcon
               onClick={() => handleUpvote(idea.id, idea.upvotes)}
-              fontSize='small'
+              fontSize='medium'
               sx={{ color: green[500], '&:hover': { color: 'green' } }}
             ></ThumbUpIcon>
           </li>

@@ -98,7 +98,7 @@ const SearchAndSelect = ({ onArrayChange }) => {
             )
             .map((item) => (
               <li key={item} onClick={() => handleItemClick(item)}>
-                <div>{item}</div>
+                <div className='text-[0.9rem]'>{item}</div>
               </li>
             ))}
         </ul>

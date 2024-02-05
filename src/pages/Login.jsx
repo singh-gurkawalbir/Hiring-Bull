@@ -1,23 +1,30 @@
-// Signup.js
-import React, { useState } from 'react';
-import { useSignup } from '../hooks/useSignUp';
-import './styles.css'; 
+// Login.js
+import { useState } from 'react';
+import { useLogin } from '../hooks/useLogin';
+import './styles.css';
 import { Typography } from '@mui/material';
-export default function Signup() {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { error, signup } = useSignup();
+  const { error, login } = useLogin();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signup(email, password);
+    login(email, password);
   };
 
   return (
     <div className='container'>
- <Typography sx={{fontFamily: "Raleway", fontWeight: 500}} className='heading' variant='h5' display='block' gutterBottom>
-        Sign Up
-      </Typography><form className='form' onSubmit={handleSubmit}>
+      <Typography
+        sx={{ fontFamily: 'Raleway', fontWeight: 500 }}
+        className='heading'
+        variant='h5'
+        display='block'
+        gutterBottom
+      >
+        Login
+      </Typography>{' '}
+      <form className='form' onSubmit={handleSubmit}>
         <label className='label'>
           <span className='labelText'>Email:</span>
           <input
@@ -38,7 +45,7 @@ export default function Signup() {
             value={password}
           />
         </label>
-        <button className='button'>Sign Up</button>
+        <button className='button'>Log In</button>
         {error && <p className='error'>{error}</p>}
       </form>
     </div>

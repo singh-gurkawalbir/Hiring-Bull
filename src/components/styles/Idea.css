@@ -1,7 +1,3 @@
-.idea-list {
-  scale: 0.85;
-}
-
 .unordered {
   list-style: none;
   display: flex;
@@ -12,9 +8,9 @@
 }
 
 .unordered li {
-  width: 410px;
+  width: 330px;
   height: 100%;
-  margin: 15px 15px;
+  margin: 15px 0px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;

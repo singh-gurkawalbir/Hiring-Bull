@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className='App'>
       <IdeaForm />
-      <div className='text-center relative mb-[-60px]'>
+      <div className='text-center relative '>
         <button
           className='submit-button mx-10'
           onClick={() => setIsSortedByVotes(!isSortedByVotes)}
